@@ -12,12 +12,12 @@ func _get_preset(preset_name: StringName) -> Sound_Lib:
 		push_error("init a sound library for: ", preset_name, " preset")
 		return
 
-	if sound_lib.sound_effect.is_empty():
+	if sound_lib.library_name.is_empty():
 		push_error("enter a sound library name")
 		return
 
-	if not sfx_library.libraries.has(sound_lib.sound_effect):
-		push_error("cannot find library with name: ", sound_lib.sound_effect)
+	if not sfx_library.libraries.has(sound_lib.library_name):
+		push_error("cannot find library with name: ", sound_lib.library_name)
 		return
 
 	return sound_lib
@@ -30,7 +30,7 @@ func _set_audio_parameters(audio_player: Object, sound_lib: Sound_Lib) -> void:
 #? Shall I move create \ delete players to public?
 func _create_audio_player(sound_lib: Sound_Lib) -> AudioStreamPlayer:
 	var sfx_manager_player = AudioStreamPlayer.new()
-	sfx_manager_player.stream = sfx_library.libraries[str(sound_lib.sound_effect)].sounds.pick_random()
+	sfx_manager_player.stream = sfx_library.libraries[str(sound_lib.library_name)].sounds.pick_random()
 
 	get_tree().root.add_child(sfx_manager_player)
 	_set_audio_parameters(sfx_manager_player, sound_lib)
@@ -40,7 +40,7 @@ func _create_audio_player(sound_lib: Sound_Lib) -> AudioStreamPlayer:
 func _create_audio_player_3d(sound_lib: Sound_Lib, position: Vector3) -> AudioStreamPlayer3D:
 	var sfx_manager_player_3d = AudioStreamPlayer3D.new()
 
-	sfx_manager_player_3d.stream = sfx_library.libraries[str(sound_lib.sound_effect)].sounds.pick_random()
+	sfx_manager_player_3d.stream = sfx_library.libraries[str(sound_lib.library_name)].sounds.pick_random()
 
 	get_tree().root.add_child(sfx_manager_player_3d)
 	_set_audio_parameters(sfx_manager_player_3d, sound_lib)

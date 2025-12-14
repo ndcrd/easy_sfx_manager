@@ -1,7 +1,7 @@
 class_name Sound_Lib extends Resource
 
 @export_category("Set sound effect")
-@export var sound_effect: StringName
+@export var library_name: StringName
 @export_category("Set sound parameters")
 @export var volume: float = 0.5
 @export var pitch: float = 0.0
