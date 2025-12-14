@@ -1,3 +1,6 @@
+
+<img width="1280" height="720" alt="Untitled" src="https://github.com/user-attachments/assets/5591f570-edc8-4143-8dcc-b1b5153815a2" />
+
 # Easy SFX Manager for Godot Engine 4.x.
   This is a manager for utilizing positional and indirectional audio in 3D projects. Written in GdScript and planned to be updated with time as C++ GdExtension.
   Current iteration is a very basic, robust solution to use as Singleton or as a scene Node based on user scenario.
