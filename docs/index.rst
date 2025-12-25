@@ -20,3 +20,5 @@ Contents
    Home <self>
    usage
    api
+
+.. include:: ../README.rst
