@@ -42,7 +42,12 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_rtd_theme'
-
+html_theme = "shibuya"
+pygments_style = 'default'  # Example style
+html_theme_options = {
+  "accent_color": "sky",
+  "dark_code": True,
+  "color_mode": "dark",
+}
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
